@@ -293,7 +293,7 @@ tr:last-child td{border-bottom:0}
         <ul>
           <li>Piso interno de 60 cm e piso do terraço de 45 cm, conferidos pela porta (2,10 m), pela cama de casal e pelo tanque.</li>
           <li>Largura do prédio (cerca de 5,2 m por unidade) e posição do poço de luz tiradas do satélite.</li>
-          <li>Três leituras independentes das fotos foram cruzadas com o desenho. A soma com paredes dá 37 m² embaixo e 37 m² em cima, o que fecha com os 74 m² do anúncio.</li>
+          <li>Três leituras independentes das fotos e duas conferências de medidas foram cruzadas com o desenho. A soma com paredes dá cerca de 37 m² embaixo e 37 m² em cima, perto dos 74 m² do anúncio.</li>
         </ul>
       </div>
       <div>
@@ -338,7 +338,7 @@ var C = {q1:'#cdb898', q2:'#b7c6a6', bn:'#a6c7d1', ci:'#d6d1c4', sa:'#dcc88e', c
          furn:'#8d99a0', wood:'#8a6648', dark:'#3b4347', stair:'#a59f8f', slab:'#d9dedd', glass:'#9fd0e6', roof:'#b86a4e'};
 
 var ROOMS = [
-  {id:'q1', n:'Quarto 1 (casal)', lv:0, c:C.q1, conf:'média', lx:2.08, ly:1.30,
+  {id:'q1', n:'Quarto 1 (casal)', lv:0, c:C.q1, conf:'média', lx:1.30, ly:2.40,
    pts:[[0.15,0.15],[2.75,0.15],[2.75,2.44],[2.14,3.05],[0.15,3.05]]},
   {id:'q2', n:'Quarto 2',         lv:0, c:C.q2, conf:'média', lx:3.72, ly:2.30,
    pts:[[2.90,0.15],[5.05,0.15],[5.05,3.35],[3.86,3.35],[2.90,2.39]]},
@@ -370,7 +370,7 @@ var WALLS = [
   {lv:0,x0:0.15,y0:3.05,x1:2.17,y1:3.15,h:H0,c:C.wall},
   {lv:0,x0:3.80,y0:3.35,x1:5.05,y1:3.45,h:H0,c:C.wall},
   {lv:0,x0:0.15,y0:4.35,x1:2.75,y1:4.50,h:H0,c:C.wall,op:[{a:0.40,b:1.00,sill:1.5,head:2.1,t:'janela'}]},
-  {lv:0,x0:2.75,y0:3.73,x1:2.90,y1:8.55,h:H0,c:C.wall,op:[{a:5.00,b:6.50,sill:1.0,head:2.1,t:'janela'},{a:7.60,b:8.50,sill:0,head:2.1,t:'vao'}]},
+  {lv:0,x0:2.75,y0:3.73,x1:2.90,y1:8.55,h:H0,c:C.wall,op:[{a:5.00,b:6.50,sill:1.0,head:2.1,t:'janela'},{a:7.72,b:8.52,sill:0,head:2.1,t:'vao'}]},
   {lv:0,x0:0.15,y0:6.90,x1:2.75,y1:7.05,h:H0,c:C.wall,op:[{a:0.85,b:2.05,sill:1.1,head:2.1,t:'janela'}]},
   {lv:0,x0:0,y0:8.55,x1:5.2,y1:8.70,h:H0,c:C.wall,op:[{a:4.15,b:4.95,sill:0,head:2.1,t:'porta'}]},
   // cobertura
@@ -402,20 +402,20 @@ var DOORS = [
 ];
 // contorno dos moveis nas plantas 2D. lv 0 = apartamento, 1 = cobertura (hoje e projeto), 2 = so no projeto da cobertura
 var FURN = [
-  {lv:0,x0:0.15,y0:0.15,x1:1.53,y1:2.11},{lv:0,x0:1.57,y0:0.17,x1:1.97,y1:0.57},{lv:0,x0:0.15,y0:2.50,x1:1.65,y1:3.05},
+  {lv:0,x0:0.15,y0:0.15,x1:1.53,y1:2.11},{lv:0,x0:1.57,y0:0.17,x1:1.97,y1:0.57},{lv:0,x0:2.20,y0:0.60,x1:2.75,y1:2.10},
   {lv:0,x0:4.17,y0:0.15,x1:5.05,y1:2.11},{lv:0,x0:3.75,y0:0.17,x1:4.13,y1:0.55},{lv:0,x0:4.50,y0:2.25,x1:5.05,y1:3.30},{lv:0,x0:2.90,y0:0.55,x1:3.42,y1:1.55},
-  {lv:0,x0:4.20,y0:3.60,x1:5.05,y1:5.55},{lv:0,x0:2.90,y0:3.90,x1:3.28,y1:4.95},{lv:0,x0:4.25,y0:6.05,x1:5.05,y1:7.25},
+  {lv:0,x0:4.20,y0:3.60,x1:5.05,y1:5.55},{lv:0,x0:2.90,y0:4.10,x1:3.28,y1:5.00},{lv:0,x0:4.25,y0:6.05,x1:5.05,y1:7.25},
   {lv:0,x0:0.70,y0:7.05,x1:2.05,y1:7.60},{lv:0,x0:0.15,y0:7.05,x1:0.70,y1:7.60},{lv:0,x0:2.08,y0:7.05,x1:2.73,y1:7.72},
-  {lv:0,x0:0.15,y0:3.15,x1:1.05,y1:4.35},{lv:0,x0:1.17,y0:3.76,x1:1.50,y1:4.35},{lv:0,x0:1.72,y0:3.90,x1:2.27,y1:4.35},
+  {lv:0,x0:0.15,y0:3.15,x1:1.05,y1:4.35},{lv:0,x0:1.17,y0:3.76,x1:1.50,y1:4.35},{lv:0,x0:1.72,y0:3.95,x1:2.27,y1:4.35},
   {lv:1,x0:3.30,y0:8.00,x1:3.85,y1:8.55},{lv:1,x0:2.50,y0:7.95,x1:3.10,y1:8.55},
-  {lv:2,x0:0.15,y0:2.30,x1:0.95,y1:3.00},{lv:2,x0:0.15,y0:3.00,x1:0.75,y1:4.30},{lv:2,x0:1.45,y0:2.90,x1:3.05,y1:3.70},
+  {lv:2,x0:0.15,y0:2.36,x1:0.95,y1:3.00},{lv:2,x0:0.15,y0:3.00,x1:0.75,y1:4.15},{lv:2,x0:1.45,y0:2.90,x1:3.05,y1:3.70},
   {lv:2,x0:4.20,y0:4.90,x1:5.05,y1:6.50},{lv:2,x0:3.45,y0:0.17,x1:5.05,y1:1.00},{lv:2,x0:4.25,y0:1.00,x1:5.05,y1:1.90},
-  {lv:2,x0:0.95,y0:0.65,x1:1.95,y1:1.65},{lv:2,x0:0.15,y0:7.15,x1:0.75,y1:8.45}
+  {lv:2,x0:0.95,y0:0.65,x1:1.95,y1:1.65},{lv:2,x0:0.15,y0:7.22,x1:0.75,y1:8.45}
 ];
 var STAIR = {x0:0.30, x1:4.08, y0:8.75, y1:9.65, n:14};   // 14 pisos, 15 espelhos, sobe da esquerda para a direita
 
 // projeto futuro: telhado cobrindo 70% do piso do terraco. Fica aberta a faixa da frente e o poco de luz.
-var ROOF = {y0:2.20, y1:8.70, x0:0, x1:5.20, nx:2.95, ny0:4.30, ny1:7.10, h0:2.50, h1:3.10};
+var ROOF = {y0:2.20, y1:8.70, x0:0, x1:5.20, nx:2.90, ny0:4.35, ny1:7.05, h0:2.50, h1:3.10};
 ROOF.pts = [[ROOF.x0,ROOF.y0],[ROOF.x1,ROOF.y0],[ROOF.x1,ROOF.y1],[ROOF.x0,ROOF.y1],[ROOF.x0,ROOF.ny1],[ROOF.nx,ROOF.ny1],[ROOF.nx,ROOF.ny0],[ROOF.x0,ROOF.ny0]];
 var POSTS = [[0.21,2.27],[2.60,2.27],[4.99,2.27],[0.21,4.28],[2.97,4.42],[2.97,6.98],[0.21,7.12]];
 var ZONES = [   // ambientes do projeto da cobertura: nome, x, y, largura, comprimento, coberto?
@@ -533,6 +533,7 @@ plan(1, document.getElementById('p2'), true);
   document.getElementById('geral').innerHTML = '<thead><tr><th>Item</th><th class="num">Medida</th></tr></thead><tbody>'+
     tr('Largura externa (apartamento e cobertura)',fmt(W)+' m')+
     tr('Comprimento externo, da frente até a parede da escada',fmt(D)+' m')+
+    tr('Medidas internas (de parede a parede)',fmt(W-0.30)+' × '+fmt(D-0.30)+' m')+
     tr('Caixa da escada, atrás',fmt(DC-D)+' m')+
     tr('Comprimento total com a escada',fmt(DC)+' m')+
     tr('Vão do lado do poço de luz (quarto 1, banheiro, cozinha)','2,60 m')+
@@ -544,13 +545,14 @@ plan(1, document.getElementById('p2'), true);
     tr('Porta de entrada','0,80 × 2,10 m')+
     tr('Portas dos quartos (a 45°)','0,70 e 0,75 × 2,10 m')+
     tr('Porta do banheiro (a 45°)','0,65 × 2,10 m')+
-    tr('Vão da cozinha, sem porta','0,90 m')+
+    tr('Vão da cozinha, sem porta','0,80 m')+
     tr('Janelas dos quartos e da cozinha','1,20 × 1,00 m')+
     tr('Janela da sala (para o poço)','1,50 × 1,10 m')+
     tr('Janela do banheiro','0,60 × 0,60 m')+
     tr('Escada: largura livre',fmt(st.y1-st.y0)+' m')+
     tr('Escada: 14 pisos e 15 espelhos',f1(piso)+' cm e '+f1(esp)+' cm')+
     tr('Escada: comprimento do lance',fmt(st.x1-st.x0)+' m')+
+    tr('Escada: onde começa embaixo','a confirmar no local')+
     tr('Mureta da frente do terraço','1,20 m de altura')+
     tr('Mureta do poço de luz','1,35 m de altura')+
     tr('Mureta do lado esquerdo','1,50 m de altura')+
@@ -575,7 +577,7 @@ plan(1, document.getElementById('p2'), true);
     '<p>No projeto do telhado:<b>'+f1(COB)+' m² cobertos ('+PCT+'%)</b>'+f1(DESC)+' m² abertos ('+(100-PCT)+'%)</p><hr>'+
     '<p>Área total anunciada:<b>74 m²</b></p>';
   function dd(n,v){ return '<dt>'+n+'</dt><dd>'+v+'</dd>'; }
-  document.getElementById('b-geral').innerHTML = dd('Largura total:',fmt(W)+' m')+dd('Comprimento total:',fmt(D)+' m')+dd('Com a caixa da escada:',fmt(DC)+' m')+
+  document.getElementById('b-geral').innerHTML = dd('Largura total:',fmt(W)+' m')+dd('Comprimento total:',fmt(D)+' m')+dd('Por dentro das paredes:',fmt(W-0.30)+' × '+fmt(D-0.30)+' m')+dd('Com a caixa da escada:',fmt(DC)+' m')+
     dd('Pé-direito (suposto):','2,60 m')+dd('Escada (largura):',fmt(st.y1-st.y0)+' m')+'<div class="sep"></div>'+
     dd('Telhado do projeto:',fmt(ROOF.x1-ROOF.x0)+' × '+fmt(ROOF.y1-ROOF.y0)+' m')+dd('Altura do telhado:',fmt(ROOF.h0)+' a '+fmt(ROOF.h1)+' m');
   function dr(n,id){ var r=room(id); return dd(n,fmt(r.w)+' × '+fmt(r.d)+' m'); }
@@ -709,8 +711,8 @@ plan(1, document.getElementById('p2'), true);
     // quarto 1
     bed(g,z,0.15,0.15,1.53,2.11,'#9db4cf',2);
     box(g,1.57,0.17,1.97,0.57,z,z+0.50,'#f2f1ed'); cyl(g,1.77,0.37,z+0.50,z+0.72,0.07,'#d8c690');
-    box(g,0.15,2.50,1.65,3.05,z,z+2.05,'#f2f1ed'); box(g,0.89,2.50,0.91,2.51,z+0.05,z+2.0,'#9aa3a8',0,true);
-    box(g,1.62,0.75,2.50,2.05,z+0.004,z+0.016,'#c8b89a',0,true);
+    box(g,2.20,0.60,2.75,2.10,z,z+2.05,'#f2f1ed'); box(g,2.20,1.34,2.21,1.36,z+0.05,z+2.0,'#9aa3a8',0,true);
+    box(g,0.30,2.25,1.42,2.92,z+0.004,z+0.016,'#c8b89a',0,true);
     // quarto 2
     bed(g,z,4.17,0.15,5.05,2.11,'#d9a7a0',1);
     box(g,3.75,0.17,4.13,0.55,z,z+0.50,'#f2f1ed'); cyl(g,3.94,0.36,z+0.50,z+0.72,0.07,'#d8c690');
@@ -722,7 +724,7 @@ plan(1, document.getElementById('p2'), true);
     // sala
     sofaE(g,z,4.20,3.60,5.05,5.55,'#5a4f48','#6b5f57'); box(g,4.28,3.80,4.62,4.14,z+0.46,z+0.56,'#c9b79c',0,true); box(g,4.28,5.02,4.62,5.36,z+0.46,z+0.56,'#8fa7a0',0,true);
     box(g,3.36,3.75,4.14,5.40,z+0.004,z+0.016,'#b9c0bd',0,true);
-    box(g,2.90,3.90,3.28,4.95,z,z+0.48,'#f2f1ed'); box(g,2.91,3.98,2.96,4.87,z+0.78,z+1.32,'#1d2124');
+    box(g,2.90,4.10,3.28,5.00,z,z+0.48,'#f2f1ed'); box(g,2.91,4.16,2.96,4.94,z+0.78,z+1.32,'#1d2124');
     plant(g,z,3.10,5.62,0.9); plant(g,z,3.10,6.85,1.0);
     table(g,z,4.25,6.05,5.05,7.25); box(g,4.50,6.52,4.80,6.78,z+0.76,z+0.79,'#e7e0cf',0,true);
     chair(g,z,4.01,6.39,'w'); chair(g,z,4.01,6.91,'w'); chair(g,z,4.65,5.79,'n'); chair(g,z,4.65,7.51,'s');
@@ -735,7 +737,7 @@ plan(1, document.getElementById('p2'), true);
     // banheiro
     box(g,0.15,3.15,1.05,4.35,z+0.004,z+0.03,'#cfe3ea',0,true); box(g,1.04,3.15,1.07,4.35,z,z+1.9,C.glass,0.32,true);
     box(g,1.17,4.17,1.50,4.35,z,z+0.74,'#fbfbfa'); box(g,1.19,3.76,1.48,4.17,z,z+0.40,'#fbfbfa'); box(g,1.21,3.78,1.46,4.15,z+0.40,z+0.43,'#eef1f2',0,true);
-    box(g,1.72,3.90,2.27,4.35,z,z+0.80,'#fbfbfa'); cyl(g,1.99,4.12,z+0.80,z+0.83,0.17,'#dfe7ea');
+    box(g,1.72,3.95,2.27,4.35,z,z+0.80,'#fbfbfa'); cyl(g,1.99,4.15,z+0.80,z+0.83,0.16,'#dfe7ea');
     box(g,1.15,3.28,1.65,3.60,z+0.004,z+0.018,'#b7c9d6',0,true);
   })();
   // ---------- cobertura hoje: tanque e maquina (ficam tambem no projeto) ----------
@@ -756,6 +758,7 @@ plan(1, document.getElementById('p2'), true);
     var out=ROOF.pts.concat([ROOF.pts[0]]); for(var k=0;k<out.length-1;k++) pts.push(new THREE.Vector3(out[k][0]-CX,z+hR(out[k][1])+0.014,out[k][1]-CY), new THREE.Vector3(out[k+1][0]-CX,z+hR(out[k+1][1])+0.014,out[k+1][1]-CY));
     roofLines=new THREE.LineSegments(new THREE.BufferGeometry().setFromPoints(pts),new THREE.LineBasicMaterial({color:0x6b3a2a})); g.add(roofLines);
     box(g,0,ROOF.y0-0.10,W,ROOF.y0,z+ROOF.h0-0.13,z+ROOF.h0-0.03,'#5d6a6e');                                   // calha da frente
+    box(g,0.15,ROOF.ny1-0.10,ROOF.nx,ROOF.ny1,z+hR(ROOF.ny1)-0.13,z+hR(ROOF.ny1)-0.03,'#5d6a6e');                // calha atras do poco de luz
     box(g,0.15,ROOF.y0+0.01,5.05,ROOF.y0+0.13,z+ROOF.h0-0.27,z+ROOF.h0-0.085,WD);                               // viga da frente
     POSTS.forEach(function(p){ box(g,p[0]-0.06,p[1]-0.06,p[0]+0.06,p[1]+0.06,z,z+hR(p[1])-0.085,WD); });
     // muro alto e parede do fundo sobem ate o telhado
@@ -764,15 +767,15 @@ plan(1, document.getElementById('p2'), true);
     place(g,wg,mat(C.white),W-CX,z,-CY,0,false,false);
     box(g,0,D-0.15,W,D,z+2.4,z+hR(D-0.15)-0.085,C.cream);
     // gourmet coberto
-    box(g,0.15,2.30,0.95,3.00,z,z+1.0,'#a8674d'); box(g,0.25,2.42,0.85,2.88,z+1.0,z+1.02,'#2a2d30',0,true); box(g,0.33,2.48,0.77,2.82,z+1.02,z+hR(2.65)+0.45,'#a8674d');
-    box(g,0.15,3.00,0.75,4.30,z,z+0.86,'#f4f3ef'); box(g,0.15,3.00,0.77,4.30,z+0.86,z+0.90,'#23272b'); box(g,0.27,3.50,0.63,4.00,z+0.895,z+0.908,'#a7b0b5',0,true);
+    box(g,0.15,2.36,0.95,3.00,z,z+1.0,'#a8674d'); box(g,0.25,2.46,0.85,2.90,z+1.0,z+1.02,'#2a2d30',0,true); box(g,0.33,2.52,0.77,2.84,z+1.02,z+hR(2.68)+0.45,'#a8674d');
+    box(g,0.15,3.00,0.75,4.15,z,z+0.86,'#f4f3ef'); box(g,0.15,3.00,0.77,4.15,z+0.86,z+0.90,'#23272b'); box(g,0.27,3.40,0.63,3.90,z+0.895,z+0.908,'#a7b0b5',0,true);
     table(g,z,1.45,2.90,3.05,3.70,'#7a5236');
     [1.75,2.25,2.75].forEach(function(x){ chair(g,z,x,2.64,'n',FAB,'#3b4347'); chair(g,z,x,3.96,'s',FAB,'#3b4347'); });
     plant(g,z,4.75,2.50,1.0);
     // estar coberto
     sofaE(g,z,4.20,4.90,5.05,6.50,'#8a9299','#eef0f0'); box(g,4.45,6.62,4.85,7.02,z,z+0.45,WL); plant(g,z,3.12,4.62,0.8);
     // lavanderia coberta
-    box(g,0.15,7.15,0.75,8.45,z,z+1.9,'#f2f1ed');
+    box(g,0.15,7.22,0.75,8.45,z,z+1.9,'#f2f1ed');
     box(g,1.10,8.02,1.14,8.42,z,z+1.0,'#9aa3a8',0,true); box(g,1.96,8.02,2.00,8.42,z,z+1.0,'#9aa3a8',0,true); box(g,1.10,8.02,2.00,8.42,z+1.0,z+1.02,'#c9d0d4',0.6,true);
     // solario descoberto
     sofaN(g,z,3.45,0.17,5.05,1.00,'#8a9299','#eef0f0'); sofaE(g,z,4.25,1.00,5.05,1.90,'#8a9299','#eef0f0'); box(g,3.50,1.20,4.10,1.70,z,z+0.35,WL);
@@ -850,7 +853,7 @@ plan(1, document.getElementById('p2'), true);
   function zd(i){ return fmt(ZONES[i].w)+' × '+fmt(ZONES[i].d); }
   function stills(){
     try{
-      still(0,'st0',[[2.02,1.35,'DORMITÓRIO 1',dm('q1')],[3.74,2.42,'DORMITÓRIO 2',dm('q2')],[1.45,3.44,'BANHEIRO',dm('bn')],[3.02,3.15,'HALL',''],
+      still(0,'st0',[[1.40,2.56,'DORMITÓRIO 1',dm('q1')],[3.74,2.42,'DORMITÓRIO 2',dm('q2')],[1.45,3.44,'BANHEIRO',dm('bn')],[3.02,3.15,'HALL',''],
         [3.60,5.82,'SALA / JANTAR',dm('sa')],[1.45,5.70,'POÇO DE LUZ',fmt(VOID.w)+' × '+fmt(VOID.d)],[1.42,8.16,'COZINHA',dm('cz')],
         [2.05,9.20,'ESCADA PARA A COBERTURA','',1,1.2],[4.55,10.34,'▲ ENTRADA','',1]],
         [[0,-1.42,W,-1.42,fmt(W)+' m',0,1],[0.15,-0.98,2.75,-0.98,'2,60'],[2.90,-0.98,5.05,-0.98,'2,15'],
