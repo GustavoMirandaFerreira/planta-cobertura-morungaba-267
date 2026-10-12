@@ -45,6 +45,8 @@ h1{font-family:var(--f-display);font-weight:600;font-size:clamp(30px,5vw,46px);l
 h2{font-family:var(--f-display);font-weight:600;font-size:24px;line-height:1.15;margin:0 0 12px;text-wrap:balance}
 .facts{margin:0;color:var(--muted);font-variant-numeric:tabular-nums}
 .lead{margin:6px 0 0;max-width:66ch}
+.vai{margin:6px 0 0}
+.vai a{color:var(--accent);font-weight:600}
 section{min-width:0}
 
 /* ---------- pranchas ---------- */
@@ -85,6 +87,13 @@ svg.cotas text.tot{font-size:33px}
 .b-dims{margin:0;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px;font-size:14px;font-variant-numeric:tabular-nums}
 .b-dims dt{margin:0;color:var(--b-ink)} .b-dims dd{margin:0;text-align:right;white-space:nowrap}
 .b-dims .sep{grid-column:1/-1;border-top:1px solid var(--b-line);margin:3px 0}
+.b-box table.ct{min-width:0;width:100%;font-size:12.5px;border-collapse:collapse}
+#custo table.ct{min-width:0}
+#custo p{margin:10px 12px;font-size:14px;color:var(--muted)}
+.b-box table.ct th,.b-box table.ct td{padding:3px 4px;border-bottom:1px solid var(--b-line);color:var(--b-ink);background:none}
+.b-box table.ct th{font-size:11px;color:var(--b-mut)}
+.b-box table.ct tr.sub td{font-weight:700;border-bottom:0;background:none}
+.b-box .cn{font-size:12px;color:var(--b-mut);margin:6px 0 0}
 .b-icons{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;font-size:14px}
 .b-icons li{display:flex;align-items:center;gap:10px}
 .b-icons svg{width:30px;height:24px;flex:none;stroke:var(--b-ink);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
@@ -97,6 +106,13 @@ svg.cotas text.tot{font-size:33px}
 .b-foot span{display:block;color:var(--b-mut);font-size:12px}
 @media (max-width:820px){ .b-body{grid-template-columns:minmax(0,1fr)} .b-side{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))} .b-three{grid-template-columns:minmax(0,1fr)} }
 @media (max-width:520px){ .b-side{grid-template-columns:minmax(0,1fr)} .b-two{grid-template-columns:minmax(0,1fr)} }
+.b-proj{display:grid;grid-template-columns:minmax(0,0.92fr) minmax(0,1.25fr);gap:clamp(8px,1.4vw,18px);align-items:start}
+.b-col{display:flex;flex-direction:column;gap:clamp(8px,1.4vw,14px);min-width:0}
+@media (max-width:820px){ .b-proj{grid-template-columns:minmax(0,1fr)} }
+header.socob,h2.socob{display:none}
+body.cob h2.socob{display:block}
+body.cob .apto{display:none}
+body.cob header.socob{display:flex}
 body.solo .wrap{max-width:none;width:1560px;padding:0;gap:0}
 body.solo{background:var(--b-paper)}
 body.solo1 .wrap > *:not(#prancha){display:none}
@@ -157,14 +173,23 @@ tr:last-child td{border-bottom:0}
 </style>
 
 <main class="wrap">
-  <header class="top">
+  <header class="top apto">
     <p class="eyebrow">Planta estimada pelas fotos do anúncio</p>
     <h1>Cobertura da Rua Morungaba, 267</h1>
     <p class="facts">74 m² anunciados · 2 quartos · 1 banheiro · 1 vaga · Jardim Paraíso, Santo André</p>
-    <p class="lead">O anúncio não traz planta. Este desenho foi montado a partir das 17 fotos e da imagem de satélite do prédio, com as medidas tiradas pela contagem dos pisos. A mobília é uma sugestão e o telhado é um estudo para o futuro. Vale como estudo; a margem é de 10 a 15%.</p>
+    <p class="lead">O anúncio não traz planta. Este desenho foi montado a partir das 17 fotos e da imagem de satélite do prédio, com as medidas tiradas pela contagem dos pisos. A mobília do apartamento é uma sugestão. O projeto da cobertura é um estudo: telhado em 70% do piso e um banheiro novo, sem móveis. Vale como estudo; a margem é de 10 a 15%.</p>
+    <p class="vai"><a href="https://gustavomirandaferreira.github.io/planta-cobertura-morungaba-267/cobertura.html">Ver só o projeto da cobertura (telhado e banheiro, com custo)</a></p>
   </header>
 
-  <section class="board" id="prancha" aria-label="Prancha principal">
+  <header class="top socob">
+    <p class="eyebrow">Estudo de reforma da cobertura</p>
+    <h1>Cobertura da Rua Morungaba, 267: telhado e banheiro</h1>
+    <p class="facts">Terraço de 5,20 × 8,70 m · telhado em 70% do piso · banheiro novo de 2,10 × 1,50 m · Santo André</p>
+    <p class="lead">Projeto só da parte de cima: cobrir 70% do terraço com telhado e construir um banheiro com janela atrás do poço de luz, sem móveis. As medidas foram estimadas pelas fotos do anúncio e por satélite, com margem de 10 a 15%, e os custos são de mercado, para comparar com orçamentos.</p>
+    <p class="vai"><a href="https://gustavomirandaferreira.github.io/planta-cobertura-morungaba-267/">Ver a planta completa, com o apartamento</a></p>
+  </header>
+
+  <section class="board apto" id="prancha" aria-label="Prancha principal">
     <div class="b-head">
       <h2>COBERTURA DUPLEX — RECONSTRUÇÃO 3D</h2>
       <p>Rua Morungaba, 267 | Jardim Paraíso | Santo André - SP</p>
@@ -177,7 +202,7 @@ tr:last-child td{border-bottom:0}
         </figure>
         <figure class="b-floor">
           <div class="b-img" id="st1"></div>
-          <figcaption><b>COBERTURA — PROJETO FUTURO</b><span id="cap1">70% coberta com telhado</span></figcaption>
+          <figcaption><b>COBERTURA — PROJETO</b><span id="cap1">telhado em 70% do piso e banheiro novo</span></figcaption>
         </figure>
       </div>
       <aside class="b-side">
@@ -214,32 +239,33 @@ tr:last-child td{border-bottom:0}
 
   <section class="board" id="prancha2" aria-label="Prancha da cobertura: hoje e projeto">
     <div class="b-head">
-      <h2>COBERTURA — HOJE E PROJETO COM 70% COBERTA</h2>
+      <h2>COBERTURA — PROJETO: TELHADO EM 70% E BANHEIRO</h2>
       <p>Rua Morungaba, 267 | terraço de 5,20 × 8,70 m | vista a partir da rua</p>
     </div>
-    <div class="b-two">
+    <div class="b-proj">
       <figure class="b-floor">
-        <div class="b-img wide" id="pv0"></div>
-        <figcaption><b>HOJE</b><span>terraço todo descoberto, com tanque e máquina no fundo</span></figcaption>
+        <div class="b-img" id="st1b"></div>
+        <figcaption><b>PROJETO VISTO DE CIMA</b><span>telhado transparente para mostrar o piso; medidas em metros</span></figcaption>
       </figure>
-      <figure class="b-floor">
-        <div class="b-img wide" id="pv1"></div>
-        <figcaption><b>PROJETO FUTURO</b><span id="cap2">telhado sobre 70% do piso; frente e poço de luz abertos</span></figcaption>
-      </figure>
+      <div class="b-col">
+        <figure class="b-floor">
+          <div class="b-img wide" id="pv1"></div>
+          <figcaption><b>PROJETO</b><span id="cap2">telhado sobre 70% do piso; banheiro novo atrás do poço de luz</span></figcaption>
+        </figure>
+        <figure class="b-floor">
+          <div class="b-img wide" id="pv0"></div>
+          <figcaption><b>HOJE</b><span>terraço todo descoberto, com tanque e máquina no fundo</span></figcaption>
+        </figure>
+      </div>
     </div>
     <div class="b-three">
-      <div class="b-box"><h3>TELHADO <small>(estudo)</small></h3><ul id="b-roof"></ul></div>
-      <div class="b-box"><h3>APOIOS E FECHAMENTOS</h3><ul>
-        <li>3 pilares na borda da frente do telhado, 2 nos cantos do poço de luz e 2 no lado esquerdo.</li>
-        <li>No lado direito o telhado apoia no muro alto, que sobe até ele.</li>
-        <li>No fundo apoia na parede da escada, também erguida até o telhado.</li>
-        <li>Calha na borda da frente e na volta do poço de luz.</li>
-      </ul></div>
+      <div class="b-box"><h3>O QUE SERÁ FEITO</h3><ul id="b-roof"></ul></div>
+      <div class="b-box"><h3>CUSTO ESTIMADO <small>(out/2026)</small></h3><div id="b-cost"><p>Em levantamento.</p></div></div>
       <div class="b-box"><h3>ANTES DE CONSTRUIR</h3><ul>
-        <li>Um engenheiro precisa confirmar que a laje e os muros aguentam o telhado e o vento.</li>
-        <li>Cobrir o terraço aumenta a área construída: confirmar na Prefeitura de Santo André e com os outros donos do prédio.</li>
-        <li>O poço de luz continua aberto, mas cercado pelo telhado: sala, cozinha e banheiro recebem um pouco menos de claridade.</li>
-        <li>A chaminé da churrasqueira precisa passar acima do telhado.</li>
+        <li>Um engenheiro precisa confirmar que a laje aguenta o telhado e o banheiro.</li>
+        <li>Telhado e banheiro aumentam a área construída: confirmar o alvará na Prefeitura de Santo André e a aprovação dos outros donos do prédio.</li>
+        <li>O esgoto do vaso pede tubo de 100 mm até a rede do prédio; o caminho mais provável é descer pelo poço de luz.</li>
+        <li>O banheiro fica em cima da cozinha: o piso precisa de impermeabilização nova.</li>
       </ul></div>
     </div>
     <p class="b-foot"><b>ESTUDO PRELIMINAR</b> — não é projeto executivo nem substitui arquiteto ou engenheiro.<span>Medidas estimadas pelas fotos do anúncio e por imagem de satélite, com margem de 10 a 15%.</span></p>
@@ -248,7 +274,7 @@ tr:last-child td{border-bottom:0}
   <section aria-label="Modelo 3D">
     <h2>Modelo para girar</h2>
     <div class="toolbar">
-      <div class="seg" role="group" aria-label="Níveis">
+      <div class="seg apto" role="group" aria-label="Níveis">
         <button type="button" id="m-sep" data-mode="sep" aria-pressed="true">Níveis afastados</button>
         <button type="button" id="m-join" data-mode="join" aria-pressed="false">Encaixados</button>
         <button type="button" id="m-apt" data-mode="apt" aria-pressed="false">Só apartamento</button>
@@ -270,22 +296,23 @@ tr:last-child td{border-bottom:0}
   <section class="plans">
     <h2>Plantas com medidas</h2>
     <div class="grid">
-      <figure><figcaption>Apartamento (pavimento de baixo)</figcaption><div id="p0"></div></figure>
+      <figure class="apto"><figcaption>Apartamento (pavimento de baixo)</figcaption><div id="p0"></div></figure>
       <figure><figcaption>Cobertura hoje</figcaption><div id="p1"></div></figure>
       <figure><figcaption>Cobertura, projeto com telhado</figcaption><div id="p2"></div></figure>
     </div>
   </section>
 
   <section>
-    <h2>Todas as medidas</h2>
+    <h2 class="apto">Todas as medidas</h2><h2 class="socob">Medidas e custo</h2>
     <div class="tables">
-      <div><h3>Ambientes</h3><div class="tablewrap"><table id="areas"></table></div></div>
-      <div><h3>Medidas gerais, portas, janelas e alturas</h3><div class="tablewrap"><table id="geral"></table></div></div>
-      <div><h3>Projeto do telhado (estudo)</h3><div class="tablewrap"><table id="telhado"></table></div></div>
+      <div class="apto"><h3>Ambientes</h3><div class="tablewrap"><table id="areas"></table></div></div>
+      <div class="apto"><h3>Medidas gerais, portas, janelas e alturas</h3><div class="tablewrap"><table id="geral"></table></div></div>
+      <div><h3>Projeto da cobertura (telhado e banheiro)</h3><div class="tablewrap"><table id="telhado"></table></div></div>
+      <div><h3>Custo estimado do projeto da cobertura</h3><div class="tablewrap"><div id="custo"></div></div></div>
     </div>
   </section>
 
-  <section>
+  <section class="apto">
     <h2>Como ler estas medidas</h2>
     <div class="notes">
       <div>
@@ -329,6 +356,8 @@ tr:last-child td{border-bottom:0}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 <script>
+var SO_COB = /*__SO_COB__*/false;
+if(SO_COB) document.body.classList.add('cob');
 if(location.hash==='#prancha-so') document.body.classList.add('solo','solo1');
 if(location.hash==='#prancha2-so') document.body.classList.add('solo','solo2');
 // ---------- dados da planta (metros). X: esquerda->direita na planta. Y: rua (0) -> fundos. ----------
@@ -398,7 +427,8 @@ var DOORS = [
   {lv:0,hx:2.987,hy:2.547,fx:3.518,fy:3.078,dir:-1},
   {lv:0,hx:2.263,hy:3.223,fx:2.723,fy:3.683,dir:1},
   {lv:0,hx:4.95,hy:8.55,fx:4.15,fy:8.55,dir:1},
-  {lv:1,hx:4.95,hy:8.55,fx:4.15,fy:8.55,dir:1}
+  {lv:1,hx:4.95,hy:8.55,fx:4.15,fy:8.55,dir:1},
+  {lv:2,hx:2.25,hy:7.10,fx:2.25,fy:7.80,dir:1}     // porta do banheiro novo da cobertura
 ];
 // contorno dos moveis nas plantas 2D. lv 0 = apartamento, 1 = cobertura (hoje e projeto), 2 = so no projeto da cobertura
 var FURN = [
@@ -408,22 +438,30 @@ var FURN = [
   {lv:0,x0:0.70,y0:7.05,x1:2.05,y1:7.60},{lv:0,x0:0.15,y0:7.05,x1:0.70,y1:7.60},{lv:0,x0:2.08,y0:7.05,x1:2.73,y1:7.72},
   {lv:0,x0:0.15,y0:3.15,x1:1.05,y1:4.35},{lv:0,x0:1.17,y0:3.76,x1:1.50,y1:4.35},{lv:0,x0:1.72,y0:3.95,x1:2.27,y1:4.35},
   {lv:1,x0:3.30,y0:8.00,x1:3.85,y1:8.55},{lv:1,x0:2.50,y0:7.95,x1:3.10,y1:8.55},
-  {lv:2,x0:0.15,y0:2.36,x1:0.95,y1:3.00},{lv:2,x0:0.15,y0:3.00,x1:0.75,y1:4.15},{lv:2,x0:1.45,y0:2.90,x1:3.05,y1:3.70},
-  {lv:2,x0:4.20,y0:4.90,x1:5.05,y1:6.50},{lv:2,x0:3.45,y0:0.17,x1:5.05,y1:1.00},{lv:2,x0:4.25,y0:1.00,x1:5.05,y1:1.90},
-  {lv:2,x0:0.95,y0:0.65,x1:1.95,y1:1.65},{lv:2,x0:0.15,y0:7.22,x1:0.75,y1:8.45}
+  {lv:2,x0:0.15,y0:7.05,x1:1.05,y1:8.55},{lv:2,x0:1.20,y0:7.96,x1:1.55,y1:8.55},{lv:2,x0:1.72,y0:8.12,x1:2.20,y1:8.55}
 ];
 var STAIR = {x0:0.30, x1:4.08, y0:8.75, y1:9.65, n:14};   // 14 pisos, 15 espelhos, sobe da esquerda para a direita
 
 // projeto futuro: telhado cobrindo 70% do piso do terraco. Fica aberta a faixa da frente e o poco de luz.
 var ROOF = {y0:2.20, y1:8.70, x0:0, x1:5.20, nx:2.90, ny0:4.35, ny1:7.05, h0:2.50, h1:3.10};
 ROOF.pts = [[ROOF.x0,ROOF.y0],[ROOF.x1,ROOF.y0],[ROOF.x1,ROOF.y1],[ROOF.x0,ROOF.y1],[ROOF.x0,ROOF.ny1],[ROOF.nx,ROOF.ny1],[ROOF.nx,ROOF.ny0],[ROOF.x0,ROOF.ny0]];
-var POSTS = [[0.21,2.27],[2.60,2.27],[4.99,2.27],[0.21,4.28],[2.97,4.42],[2.97,6.98],[0.21,7.12]];
+var POSTS = [[0.21,2.27],[2.60,2.27],[4.99,2.27],[0.21,4.28],[2.97,4.42],[2.97,6.98]];
+var PONT = [[5.125,3.40,2.1],[5.125,4.80,2.1],[5.125,6.20,2.1],[5.125,7.60,2.1],[3.20,8.625,2.4],[4.40,8.625,2.4]];   // pontaletes sobre muros existentes: x, y, altura do muro
+// banheiro novo: unica alvenaria do projeto. Parede nova (leste, com porta) e tres muretas existentes subidas ate o telhado.
+var BATH = {x0:0.15, x1:2.25, y0:7.05, y1:8.55, h:2.86,
+  norte:{x0:0.15,y0:6.90,x1:2.90,y1:7.05,h:2.86,de:1.35,op:[{a:0.45,b:1.05,sill:1.5,head:2.1,t:'janela'}]},   // mureta do poco subida em todo o comprimento
+  leste:{x0:2.25,y0:7.05,x1:2.35,y1:8.55,h:2.86,de:0,op:[{a:7.10,b:7.80,sill:0,head:2.1,t:'porta'}]},
+  oeste:{x0:0,y0:6.90,x1:0.15,y1:8.70,h:2.86,de:1.5},
+  sul:{x0:0,y0:8.55,x1:2.35,y1:8.70,h:2.95,de:2.4}};
 var ZONES = [   // ambientes do projeto da cobertura: nome, x, y, largura, comprimento, coberto?
-  {n:'Solário',   x:0.15, y:0.15, w:4.90, d:2.05, cob:false, lx:2.60, ly:1.80},
-  {n:'Gourmet',   x:0.15, y:2.20, w:4.90, d:2.15, cob:true,  lx:4.05, ly:3.10},
-  {n:'Estar',     x:2.90, y:4.35, w:2.15, d:2.70, cob:true,  lx:3.55, ly:5.55},
-  {n:'Lavanderia',x:0.15, y:7.05, w:4.90, d:1.50, cob:true,  lx:1.55, ly:7.48}
+  {n:'Solário',        x:0.15, y:0.15, w:4.90, d:2.05, cob:false, lx:2.60, ly:1.05},
+  {n:'Área da frente', x:0.15, y:2.20, w:4.90, d:2.15, cob:true,  lx:2.60, ly:3.15},
+  {n:'Passagem',       x:2.90, y:4.35, w:2.15, d:2.70, cob:true,  lx:3.975, ly:5.55},
+  {n:'Banheiro novo',  x:0.15, y:7.05, w:2.10, d:1.50, cob:true,  lx:1.42, ly:7.50},
+  {n:'Lavanderia',     x:2.35, y:7.05, w:2.70, d:1.50, cob:true,  lx:3.80, ly:7.50}
 ];
+var COST = {"grupos": [{"n": "Telhado e estrutura metálica", "mat": 10424, "mo": 7538, "tot": 17962}, {"n": "Calhas, rufos e condutores", "mat": 1162, "mo": 928, "tot": 2090}, {"n": "Banheiro: paredes e acabamento", "mat": 2450, "mo": 4415, "tot": 6865}, {"n": "Banheiro: louças, porta e janela", "mat": 2999, "mo": 1437, "tot": 4436}, {"n": "Banheiro: água, esgoto e impermeabilização", "mat": 1754, "mo": 4272, "tot": 6026}, {"n": "Elétrica", "mat": 2157, "mo": 2485, "tot": 4642}, {"n": "Subida de material, caçamba e limpeza", "mat": 0, "mo": 2400, "tot": 2400}, {"n": "Projeto, laudo, ART e alvará", "mat": 0, "mo": 0, "tot": 10653}, {"n": "Imprevistos (10%)", "mat": 0, "mo": 0, "tot": 5507}], "total": {"mat": 20946, "mo": 23475, "tot": 60581}, "obs": "Cenário provável. Faixa: R$ 41.900 (econômico, mão de obra autônoma) a R$ 95.400 (empresa com nota e acabamento melhor). Preços de São Paulo capital (out/2026) e SINAPI (jul/2026); nenhum é orçamento de Santo André."};   // preenchido depois da pesquisa de precos
+
 
 
 // divide uma parede reta em pecas solidas [x0,y0,x1,y1,z0,z1]
@@ -440,6 +478,7 @@ function f1(v){ return v.toFixed(1).replace('.',','); }
 function area(r){ var p=r.pts,s=0; for(var i=0;i<p.length;i++){ var q=p[(i+1)%p.length]; s+=p[i][0]*q[1]-q[0]*p[i][1]; } return Math.abs(s)/2; }
 function dsegs(w){ var L=Math.hypot(w.x1-w.x0,w.y1-w.y0), ux=(w.x1-w.x0)/L, uy=(w.y1-w.y0)/L; return {L:L,ux:ux,uy:uy,ang:Math.atan2(uy,ux)}; }
 function leafEnd(d){ var dx=d.fx-d.hx, dy=d.fy-d.hy; return d.dir>0 ? [d.hx-dy,d.hy+dx] : [d.hx+dy,d.hy-dx]; }
+function semVerga2(w){ return {x0:w.x0,y0:w.y0,x1:w.x1,y1:w.y1,h:w.h,op:(w.op||[]).map(function(o){ return {a:o.a,b:o.b,sill:0,head:w.h,t:o.t}; })}; }
 function room(id){ for(var i=0;i<ROOMS.length;i++) if(ROOMS[i].id===id) return ROOMS[i]; }
 function hR(y){ return ROOF.h0+(y-ROOF.y0)*(ROOF.h1-ROOF.h0)/(ROOF.y1-ROOF.y0); }
 var TOT = {0:0,1:0}; ROOMS.forEach(function(r){ TOT[r.lv]+=area(r); });
@@ -481,14 +520,18 @@ function plan(lv, host, fut){
   });
   DIAG.forEach(function(w){ if(w.lv!==lv) return; var g=dsegs(w);
     [[0,w.a],[w.b,g.L]].forEach(function(sg){ L(w.x0+g.ux*sg[0],w.y0+g.uy*sg[0],w.x0+g.ux*sg[1],w.y0+g.uy*sg[1],'wline',w.t*K); }); });
-  DOORS.forEach(function(d){ if(d.lv!==lv) return; var e=leafEnd(d), r=Math.hypot(d.fx-d.hx,d.fy-d.hy);
+  if(fut){ ['norte','leste','oeste','sul'].forEach(function(k){ var w=BATH[k], alongX=(w.x1-w.x0)>=(w.y1-w.y0);
+      pieces(semVerga2(w)).forEach(function(p){ R(p[0],p[1],p[2],p[3],'wall'); });
+      (w.op||[]).forEach(function(o){ if(o.t==='janela' && alongX){ R(o.a,w.y0,o.b,w.y1,'thin','fill="var(--sheet)"'); L(o.a,(w.y0+w.y1)/2,o.b,(w.y0+w.y1)/2,'thin'); } }); }); }
+  DOORS.forEach(function(d){ if(!(d.lv===lv || (fut && d.lv===2))) return; var e=leafEnd(d), r=Math.hypot(d.fx-d.hx,d.fy-d.hy);
     L(d.hx,d.hy,e[0],e[1],'thin');
     s.push('<path d="M'+(e[0]*K)+' '+(e[1]*K)+' A'+(r*K)+' '+(r*K)+' 0 0 '+(d.dir>0?0:1)+' '+(d.fx*K)+' '+(d.fy*K)+'" class="thin" stroke-dasharray="5 5"/>'); });
   if(fut){
     s.push('<polygon points="'+ROOF.pts.map(function(p){return (p[0]*K)+','+(p[1]*K);}).join(' ')+'" class="roofl"/>');
     POSTS.forEach(function(p){ R(p[0]-0.07,p[1]-0.07,p[0]+0.07,p[1]+0.07,'post'); });
+    PONT.forEach(function(p){ R(p[0]-0.05,p[1]-0.05,p[0]+0.05,p[1]+0.05,'post'); });
     ZONES.forEach(function(z){ T(z.lx,z.ly,z.n+(z.cob?' (coberto)':' (aberto)'),'rn'); T(z.lx,z.ly+0.26,fmt(z.w)+' × '+fmt(z.d)+' m','rd'); T(z.lx,z.ly+0.50,f1(z.w*z.d)+' m²','rd'); });
-    T(1.45,VOID.y+0.52,'telhado recortado','rooft');
+    T(1.45,VOID.y+0.52,'telhado recortado','rooft'); T(1.25,6.80,'parede nova com janela','rooft');
   } else {
     ROOMS.forEach(function(r){
       if(r.lv!==lv) return;
@@ -569,7 +612,9 @@ plan(1, document.getElementById('p2'), true);
     tr('Altura livre na borda da frente',fmt(ROOF.h0)+' m')+
     tr('Altura no fundo',fmt(ROOF.h1)+' m')+
     tr('Caimento para a frente',f1(SLOPE)+'%')+
-    tr('Pilares',POSTS.length+' de 12 × 12 cm')+'</tbody>';
+    tr('Apoios do telhado',POSTS.length+' pilares de piso e '+PONT.length+' pontaletes sobre os muros')+
+    tr('Banheiro novo: porta','0,70 × 2,10 m')+tr('Banheiro novo: janela para o poço de luz','0,60 × 0,60 m')+
+    tr('Banheiro novo: alvenaria','1 parede nova e 3 muretas subidas (cerca de 11 m²)')+'</tbody>';
 
   document.getElementById('b-areas').innerHTML = '<h3>ÁREAS APROXIMADAS</h3>'+
     '<p>Pavimento inferior (apartamento):<b>'+Math.round(TOT[0])+' m² de piso</b>'+Math.round(GROSS)+' m² com paredes</p>'+
@@ -585,19 +630,26 @@ plan(1, document.getElementById('p2'), true);
   document.getElementById('b-dims').innerHTML = dr('Sala / jantar:','sa')+dr('Cozinha:','cz')+dr('Dormitório 1:','q1')+dr('Dormitório 2:','q2')+dr('Banheiro:','bn')+
     dd('Poço de luz:',fmt(VOID.w)+' × '+fmt(VOID.d)+' m')+'<div class="sep"></div>'+zd;
   document.getElementById('b-roof').innerHTML =
-    '<li>Cobre '+f1(COB)+' m² dos '+f1(COB+DESC)+' m² de piso do terraço ('+PCT+'%).</li>'+
-    '<li>Mede '+fmt(ROOF.x1-ROOF.x0)+' × '+fmt(ROOF.y1-ROOF.y0)+' m em planta, com um recorte de '+fmt(ROOF.nx-ROOF.x0)+' × '+fmt(ROOF.ny1-ROOF.ny0)+' m sobre o poço de luz.</li>'+
-    '<li>A borda fica a '+fmt(ROOF.y0-0.15)+' m da mureta da frente; essa faixa de '+f1(DESC)+' m² continua aberta.</li>'+
-    '<li>Caimento de '+f1(SLOPE)+'% para a frente: '+fmt(ROOF.h0)+' m de altura na borda e '+fmt(ROOF.h1)+' m no fundo.</li>'+
-    '<li>Telha termoacústica, que aceita pouca inclinação. Telha cerâmica pede uns 30% e levaria o fundo a cerca de '+f1(ROOF.h0+(ROOF.y1-ROOF.y0)*0.30)+' m.</li>';
+    '<li>Telhado de '+fmt(ROOF.x1-ROOF.x0)+' × '+fmt(ROOF.y1-ROOF.y0)+' m cobrindo '+f1(COB)+' m² dos '+f1(COB+DESC)+' m² de piso ('+PCT+'%), com recorte sobre o poço de luz.</li>'+
+    '<li>A faixa da frente, de '+fmt(ROOF.y0-0.15)+' m, e o poço de luz ficam abertos.</li>'+
+    '<li>Telha termoacústica com caimento de '+f1(SLOPE)+'% para a frente: '+fmt(ROOF.h0)+' m na borda e '+fmt(ROOF.h1)+' m no fundo.</li>'+
+    '<li>'+POSTS.length+' pilares de piso e '+PONT.length+' pontaletes sobre os muros que já existem. Os muros não sobem; fica um vão aberto entre eles e o telhado.</li>'+
+    '<li>Banheiro novo de 2,10 × 1,50 m atrás do poço de luz: uma parede nova com porta e a mureta do poço subida até o telhado em todo o comprimento (2,75 m), com janela de 0,60 × 0,60 m.</li>'+
+    '<li>Sem móveis, churrasqueira ou bancada.</li>';
+  (function(){ var h=document.getElementById('b-cost'), t=document.getElementById('custo'); if(!COST) return;
+    function m(v){ return 'R$ '+Math.round(v).toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.'); }
+    var r='<table class="ct"><thead><tr><th></th><th class="num">Material</th><th class="num">Mão de obra</th><th class="num">Total</th></tr></thead><tbody>';
+    COST.grupos.forEach(function(g){ r+='<tr><td>'+g.n+'</td><td class="num">'+(g.mat?m(g.mat):'–')+'</td><td class="num">'+(g.mo?m(g.mo):'–')+'</td><td class="num">'+m(g.tot)+'</td></tr>'; });
+    r+='<tr class="sub"><td>Total provável</td><td class="num">'+m(COST.total.mat)+'</td><td class="num">'+m(COST.total.mo)+'</td><td class="num">'+m(COST.total.tot)+'</td></tr></tbody></table>';
+    h.innerHTML=r+'<p class="cn">'+COST.obs+'</p>'; if(t) t.innerHTML=r+'<p>'+COST.obs+'</p>'; })();
   document.getElementById('cap0').textContent = 'apartamento com mobília sugerida, aprox. 37 m²';
-  document.getElementById('cap1').textContent = PCT+'% do piso coberto com telhado';
+  document.getElementById('cap1').textContent = 'telhado em '+PCT+'% do piso e banheiro novo, sem móveis';
 })();
 
 // ---------- modelo 3D ----------
 (function(){
   var stage=document.getElementById('stage'), canvas=document.getElementById('c3d');
-  function boardFallback(){ plan(0, document.getElementById('st0')); plan(1, document.getElementById('st1'), true); plan(1, document.getElementById('pv0')); plan(1, document.getElementById('pv1'), true); }
+  function boardFallback(){ plan(0, document.getElementById('st0')); plan(1, document.getElementById('st1'), true); plan(1, document.getElementById('st1b'), true); plan(1, document.getElementById('pv0')); plan(1, document.getElementById('pv1'), true); }
   function fail(){ var d=document.createElement('div'); d.className='fallback'; d.textContent='O visor 3D não carregou neste aparelho. As plantas com medidas logo abaixo mostram o mesmo desenho.'; canvas.hidden=true; stage.appendChild(d); boardFallback(); }
   if(!window.THREE){ fail(); return; }
   var renderer;
@@ -678,8 +730,8 @@ plan(1, document.getElementById('p2'), true);
   });
   DIAG.forEach(function(w){ var d=dsegs(w), g=grp(w.lv);
     dbox(g,w,0,w.a,0,w.h,true); dbox(g,w,w.b,d.L,0,w.h,true); });
-  DOORS.forEach(function(d){ var e=leafEnd(d), g=grp(d.lv), b=base(d.lv), len=Math.hypot(e[0]-d.hx,e[1]-d.hy), ang=Math.atan2(e[1]-d.hy,e[0]-d.hx);
-    place(g,new THREE.BoxGeometry(len,2.08,0.04),mat(d.lv===1?'#e9ecec':C.wood),(d.hx+e[0])/2-CX,b+1.04,(d.hy+e[1])/2-CY,-ang,false,false); });
+  DOORS.forEach(function(d){ var e=leafEnd(d), g=d.lv===2?gFut:grp(d.lv), b=d.lv===2?LV:base(d.lv), len=Math.hypot(e[0]-d.hx,e[1]-d.hy), ang=Math.atan2(e[1]-d.hy,e[0]-d.hx);
+    place(g,new THREE.BoxGeometry(len,2.08,0.04),mat(d.lv===0?C.wood:'#e9ecec'),(d.hx+e[0])/2-CX,b+1.04,(d.hy+e[1])/2-CY,-ang,false,false); });
 
   // ---------- pecas de mobilia ----------
   var WD='#5b3c27', WL='#8a6648', FAB='#d9d3c3';
@@ -745,7 +797,7 @@ plan(1, document.getElementById('p2'), true);
     box(g,3.30,8.00,3.85,8.55,z+0.55,z+0.85,'#f6f6f4'); box(g,3.50,8.25,3.65,8.50,z,z+0.55,'#f0f0ee',0,true);
     box(g,2.50,7.95,3.10,8.55,z,z+0.92,'#f6f6f4'); box(g,2.53,7.98,3.07,8.52,z+0.92,z+0.95,'#c9d0d4',0,true);
   })();
-  // ---------- projeto futuro: telhado, apoios e mobilia ----------
+  // ---------- projeto da cobertura: telhado, apoios e banheiro novo ----------
   var roofMat=new THREE.MeshLambertMaterial({color:C.roof,side:THREE.DoubleSide,transparent:true,opacity:0.6}), roofMesh=null, roofLines=null;
   (function(){ var z=LV, g=gFut;
     var sh=new THREE.Shape(); ROOF.pts.forEach(function(p,i){ if(i) sh.lineTo(p[0],p[1]); else sh.moveTo(p[0],p[1]); });
@@ -761,27 +813,16 @@ plan(1, document.getElementById('p2'), true);
     box(g,0.15,ROOF.ny1-0.10,ROOF.nx,ROOF.ny1,z+hR(ROOF.ny1)-0.13,z+hR(ROOF.ny1)-0.03,'#5d6a6e');                // calha atras do poco de luz
     box(g,0.15,ROOF.y0+0.01,5.05,ROOF.y0+0.13,z+ROOF.h0-0.27,z+ROOF.h0-0.085,WD);                               // viga da frente
     POSTS.forEach(function(p){ box(g,p[0]-0.06,p[1]-0.06,p[0]+0.06,p[1]+0.06,z,z+hR(p[1])-0.085,WD); });
-    // muro alto e parede do fundo sobem ate o telhado
-    var ws=new THREE.Shape(); ws.moveTo(ROOF.y0,2.1); ws.lineTo(D,2.1); ws.lineTo(D,hR(D)-0.085); ws.lineTo(ROOF.y0,ROOF.h0-0.085);
-    var wg=new THREE.ExtrudeGeometry(ws,{depth:0.15,bevelEnabled:false}); wg.rotateY(-Math.PI/2);
-    place(g,wg,mat(C.white),W-CX,z,-CY,0,false,false);
-    box(g,0,D-0.15,W,D,z+2.4,z+hR(D-0.15)-0.085,C.cream);
-    // gourmet coberto
-    box(g,0.15,2.36,0.95,3.00,z,z+1.0,'#a8674d'); box(g,0.25,2.46,0.85,2.90,z+1.0,z+1.02,'#2a2d30',0,true); box(g,0.33,2.52,0.77,2.84,z+1.02,z+hR(2.68)+0.45,'#a8674d');
-    box(g,0.15,3.00,0.75,4.15,z,z+0.86,'#f4f3ef'); box(g,0.15,3.00,0.77,4.15,z+0.86,z+0.90,'#23272b'); box(g,0.27,3.40,0.63,3.90,z+0.895,z+0.908,'#a7b0b5',0,true);
-    table(g,z,1.45,2.90,3.05,3.70,'#7a5236');
-    [1.75,2.25,2.75].forEach(function(x){ chair(g,z,x,2.64,'n',FAB,'#3b4347'); chair(g,z,x,3.96,'s',FAB,'#3b4347'); });
-    plant(g,z,4.75,2.50,1.0);
-    // estar coberto
-    sofaE(g,z,4.20,4.90,5.05,6.50,'#8a9299','#eef0f0'); box(g,4.45,6.62,4.85,7.02,z,z+0.45,WL); plant(g,z,3.12,4.62,0.8);
-    // lavanderia coberta
-    box(g,0.15,7.22,0.75,8.45,z,z+1.9,'#f2f1ed');
-    box(g,1.10,8.02,1.14,8.42,z,z+1.0,'#9aa3a8',0,true); box(g,1.96,8.02,2.00,8.42,z,z+1.0,'#9aa3a8',0,true); box(g,1.10,8.02,2.00,8.42,z+1.0,z+1.02,'#c9d0d4',0.6,true);
-    // solario descoberto
-    sofaN(g,z,3.45,0.17,5.05,1.00,'#8a9299','#eef0f0'); sofaE(g,z,4.25,1.00,5.05,1.90,'#8a9299','#eef0f0'); box(g,3.50,1.20,4.10,1.70,z,z+0.35,WL);
-    cyl(g,1.45,1.15,z+0.70,z+0.74,0.50,'#7a5236'); cyl(g,1.45,1.15,z,z+0.70,0.05,WD);
-    chair(g,z,1.45,0.48,'n',FAB,'#3b4347'); chair(g,z,1.45,1.82,'s',FAB,'#3b4347'); chair(g,z,0.78,1.15,'w',FAB,'#3b4347'); chair(g,z,2.12,1.15,'e',FAB,'#3b4347');
-    plant(g,z,0.42,0.42,1.15); plant(g,z,2.75,0.42,1.0); plant(g,z,0.42,1.95,0.9);
+    PONT.forEach(function(p){ box(g,p[0]-0.05,p[1]-0.05,p[0]+0.05,p[1]+0.05,z+p[2],z+hR(p[1])-0.085,WD); });   // pontaletes sobre os muros
+    // banheiro novo: piso, paredes, janela, porta e pecas
+    poly(g,[[BATH.x0,BATH.y0],[BATH.x1,BATH.y0],[BATH.x1,BATH.y1],[BATH.x0,BATH.y1]],z+0.012,FL.ban);
+    ['norte','leste','oeste','sul'].forEach(function(k){ var w=BATH[k], alongX=(w.x1-w.x0)>=(w.y1-w.y0);
+      pieces(semVerga(w)).forEach(function(p){ var z0=Math.max(p[4],w.de); if(p[5]-z0>0.01) box(g,p[0],p[1],p[2],p[3],z+z0,z+p[5],'#f6f1e6'); });
+      (w.op||[]).forEach(function(o){ if(o.t!=='janela') return;
+        if(alongX) box(g,o.a,(w.y0+w.y1)/2-0.02,o.b,(w.y0+w.y1)/2+0.02,z+o.sill,z+o.head,C.glass,0.45,true); }); });
+    box(g,0.15,7.05,1.05,8.55,z+0.016,z+0.04,'#cfe3ea',0,true); box(g,1.04,7.05,1.07,8.55,z,z+1.9,C.glass,0.32,true);
+    box(g,1.21,8.37,1.54,8.55,z,z+0.74,'#fbfbfa'); box(g,1.23,7.96,1.52,8.37,z,z+0.40,'#fbfbfa');
+    box(g,1.72,8.12,2.20,8.55,z,z+0.80,'#fbfbfa'); cyl(g,1.96,8.33,z+0.80,z+0.83,0.15,'#dfe7ea');
   })();
   // escada: 14 pisos, patamar e o cacto que aparece na foto
   (function(){ var st=STAIR, tr=(st.x1-st.x0)/st.n, ri=LV/(st.n+1);
@@ -860,11 +901,13 @@ plan(1, document.getElementById('p2'), true);
          [-1.10,0,-1.10,D,fmt(D)+' m',1,1],[-1.10,D,-1.10,DC,fmt(DC-D),1],
          [-0.64,0.15,-0.64,3.05,'2,90',1],[-0.64,3.15,-0.64,4.35,'1,20',1],[-0.64,4.50,-0.64,6.90,'2,40',1],[-0.64,7.05,-0.64,8.55,'1,50',1],
          [W+0.62,0.15,W+0.62,3.35,'3,20'],[W+0.62,3.45,W+0.62,8.55,'5,10']],false);
-      still(1,'st1',[[2.60,1.72,'SOLÁRIO ABERTO',zd(0)],[4.02,3.28,'GOURMET COBERTO',zd(1)],[1.45,5.70,'POÇO DE LUZ ABERTO',fmt(VOID.w)+' × '+fmt(VOID.d)],[3.55,5.68,'ESTAR COBERTO',zd(2)],
-        [1.62,7.52,'LAVANDERIA COBERTA',zd(3)],[2.60,2.20,'BORDA DO TELHADO','',2,ROOF.h0],[2.05,9.20,'ESCADA (DESCE PARA O APARTAMENTO)','',1,-1.4],[4.28,8.08,'PORTA','',1]],
+      still(1,'st1',[[2.60,1.10,'SOLÁRIO ABERTO',zd(0)],[2.60,3.25,'ÁREA COBERTA',zd(1)],[1.45,5.62,'POÇO DE LUZ ABERTO',fmt(VOID.w)+' × '+fmt(VOID.d)],[3.98,5.62,'PASSAGEM COBERTA',zd(2)],
+        [1.30,7.86,'BANHEIRO NOVO',zd(3)],[3.72,7.42,'LAVANDERIA COBERTA',zd(4)],[2.60,2.20,'BORDA DO TELHADO','',2,ROOF.h0],[1.20,6.86,'PAREDE NOVA COM JANELA','',2,2.3],
+        [2.05,9.20,'ESCADA (DESCE PARA O APARTAMENTO)','',1,-1.4],[4.40,8.14,'PORTA','',1]],
         [[0,-0.72,W,-0.72,fmt(W)+' m',0,1],[-1.12,0,-1.12,D,fmt(D)+' m',1,1],
          [-0.66,0.15,-0.66,2.20,'2,05',1],[-0.66,2.20,-0.66,8.70,'telhado '+fmt(ROOF.y1-ROOF.y0),1],
          [W+0.66,0.15,W+0.66,2.20,'2,05'],[W+0.66,2.20,W+0.66,4.35,'2,15'],[W+0.66,4.35,W+0.66,7.05,'2,70'],[W+0.66,7.05,W+0.66,8.55,'1,50']],true);
+      document.getElementById('st1b').innerHTML=document.getElementById('st1').innerHTML;
       persp('pv0',false); persp('pv1',true);
     }catch(e){ boardFallback(); }
     renderer.setPixelRatio(DPR);
@@ -873,7 +916,7 @@ plan(1, document.getElementById('p2'), true);
   // ---------- visor interativo ----------
   var ctl = THREE.OrbitControls ? new THREE.OrbitControls(cam,canvas) : {target:new THREE.Vector3(),update:function(){},addEventListener:function(){}};
   ctl.enableDamping=false; ctl.maxPolarAngle=Math.PI*0.495; ctl.minDistance=4; ctl.maxDistance=60;
-  var mode='sep', view='3d', fut=true;
+  var mode=SO_COB?'cob':'sep', view='3d', fut=true;
   function apply(){
     g0.visible=(mode!=='cob'); g1.visible=(mode!=='apt'); gsU.visible=(mode!=='apt'); gsL.visible=true; shaft.visible=(mode==='cob');
     g1.position.y=gsU.position.y=(mode==='sep')?GAP:0; guides.visible=(mode==='sep'); l0.visible=ls.visible=true; l1.visible=!fut; l2.visible=fut;
